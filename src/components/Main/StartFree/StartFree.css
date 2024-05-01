@@ -1,0 +1,41 @@
+#start-free {
+  margin: 1rem;
+  background-color: var(--color-bg-start-free);
+  padding: 3rem 2rem;
+  border-radius: 5px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+#start-free h1 {
+  font-size: 40px;
+  font-family: "Amerigo BT";
+  font-weight: 400;
+  max-width: 500px;
+}
+
+#start-free h1 span {
+  color: var(--color-green);
+}
+
+#start-free button {
+  background-color: var(--color-green);
+  border: none;
+  outline: none;
+  padding: .75rem 1.25rem;
+  color: var(--color-white);
+  font-size: 14px;
+  letter-spacing: .7px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  transition: filter .25s;
+}
+
+#start-free button:hover {
+  filter: brightness(.9);
+}

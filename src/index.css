@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('fonts/Proxima-Nova.otf');
+}
+@font-face {
+  font-family: 'Amerigo BT';
+  src: url('fonts/Amerigo-BT.ttf')
+}
+
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-bg: #F7F7F9;
+  --color-gray: #4C525A;
+  --color-light-gray: #C3C3C3;
+  --color-yellow: #f8db62;
+  --color-green: #00b289;
+  --color-bg-start-free: #F2FAFF;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-white);
+  min-height: 100vh;
+  font-family: 'Proxima Nova';
+}
+
+ul {
+  list-style: none;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 33.6px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}

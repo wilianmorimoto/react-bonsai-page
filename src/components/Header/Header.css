@@ -1,0 +1,30 @@
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--color-white);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+#header img {
+  width: 150px;
+}
+
+#menu-icon {
+  color: var(--color-gray);
+  font-size: 3rem;
+  cursor: pointer;
+
+  transition: color .3s;
+}
+
+#menu-icon:hover {
+  color: var(--color-black);
+}
