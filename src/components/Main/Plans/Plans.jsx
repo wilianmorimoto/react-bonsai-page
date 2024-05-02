@@ -2,21 +2,14 @@ import React, { useState } from "react";
 import './Plans.css'
 import { FaCheck } from "react-icons/fa";
 
-const Plans = () => {
-
-  const [yearly, setYearly] = useState(false)
-
-  function toggleYearly() {
-    setYearly(!yearly)
-  }
-
+const Plans = ({yearly, setYearly}) => {
 	return (
 		<div id="plans">
 			<div className="header-plans">
 				<h1>Plans & Pricing</h1>
 				<div className="toggle-plans">
 					<span className={!yearly ? "selected" : ''}>MONTHLY</span>
-					<div onClick={toggleYearly} className="toggle-button">
+					<div onClick={() => setYearly(!yearly)} className="toggle-button">
 						<div className={`circle ${yearly ? "year" : ""}`}></div>
 					</div>
 					<span className={yearly ? "selected" : ''}>YEARLY</span>

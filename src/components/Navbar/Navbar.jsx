@@ -6,24 +6,12 @@ import { CiClock2 } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
+	const [menuProduct, setMenuProduct] = useState(false);
+	const [menuTemplates, setMenuTemplates] = useState(false);
 
-  function openMenu(e) {
-		const li = e.target
-		const ul = li.querySelector('.nav-sublist')
-		const listIcon = li.querySelector('p > svg')
-
-		if (ul.style.display === "none") {
-			listIcon.style.transform = "rotate(180deg)";
-      ul.style.display = "block";
-		} else {
-			listIcon.style.transform = "rotate(360deg)";
-      ul.style.display = "none";
-		}
-  }
-
-  function closeMenu() {
-    document.getElementById("navbar").classList.remove("show");
-  }
+	function closeMenu() {
+		document.getElementById("navbar").classList.remove("show");
+	}
 
 	return (
 		<nav id="navbar">
@@ -35,9 +23,23 @@ const Navbar = () => {
 				<IoClose id="close-menu-icon" onClick={closeMenu} />
 			</div>
 			<ul className="nav-list">
-				<li onClick={(e) => openMenu(e)}>
-					<p>Product <IoIosArrowDown className="list-arrow-icon" /></p>
-					<ul className="nav-sublist">
+				<li
+					onClick={() => {
+						if (menuTemplates) {
+							setMenuTemplates(false);
+							setMenuProduct(!menuProduct);
+						}
+						setMenuProduct(!menuProduct);
+					}}
+				>
+					<p>
+						Product{" "}
+						<IoIosArrowDown
+							className="list-arrow-icon"
+							style={menuProduct ? { transform: "rotate(180deg)" } : ""}
+						/>
+					</p>
+					<ul className={`nav-sublist ${menuProduct ? "show" : ""}`}>
 						<li>
 							<h3>Bonsai Workflow</h3>
 							<p>Organize your business & look professional</p>
@@ -52,9 +54,23 @@ const Navbar = () => {
 						</li>
 					</ul>
 				</li>
-				<li onClick={(e) => openMenu(e)}>
-					<p>Templates <IoIosArrowDown className="list-arrow-icon" /></p>
-					<ul className="nav-sublist">
+				<li
+					onClick={() => {
+						if (menuProduct) {
+							setMenuProduct(false);
+							setMenuTemplates(!menuTemplates);
+						}
+						setMenuTemplates(!menuTemplates);
+					}}
+				>
+					<p>
+						Templates{" "}
+						<IoIosArrowDown
+							className="list-arrow-icon"
+							style={menuTemplates ? { transform: "rotate(180deg)" } : ""}
+						/>
+					</p>
+					<ul className={`nav-sublist ${menuTemplates ? "show" : ""}`}>
 						<li>
 							<TbFileInvoice />
 							Contract Templates

@@ -1,0 +1,100 @@
+footer {
+	display: grid;
+	gap: 3rem;
+
+	padding: 0 1rem 100px;
+	width: 100%;
+	max-width: calc(1200px + 2rem);
+	margin: 0 auto;
+}
+
+.footer-list h2 {
+	font-size: 18px;
+	margin-bottom: 0.75rem;
+}
+
+.footer-list ul {
+	display: flex;
+	flex-direction: column;
+	gap: 0.1rem;
+}
+
+.footer-list:first-child ul li:nth-child(11),
+.footer-list:nth-child(2) ul li:nth-child(4),
+.footer-list:nth-child(4) ul li:nth-child(8),
+.footer-list:nth-child(4) ul li:last-child {
+	margin-top: 1.5rem;
+}
+
+.footer-list ul li {
+	overflow: hidden;
+}
+
+.footer-list ul li a {
+	display: block;
+	cursor: pointer;
+	font-weight: 300;
+	opacity: 0.7;
+	padding: 0.5rem 0;
+	text-decoration: none;
+	color: unset;
+
+	transition: opacity 0.2s;
+}
+
+.footer-list > ul > li > a:hover {
+	opacity: 1;
+}
+
+.sublist-title {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+
+	padding: 0.5rem 0;
+}
+
+.sublist-title svg {
+	transition: transform 0.4s;
+}
+
+.footer-sublist {
+	display: flex;
+	flex-direction: column;
+	gap: 0.1rem;
+
+	visibility: hidden;
+	max-height: 0px;
+
+	transition: 0.4s;
+}
+
+.footer-sublist.opened {
+	visibility: visible;
+	max-height: 500px;
+}
+
+.footer-sublist p {
+	padding: 0.5rem;
+}
+
+.sublist-title,
+.footer-sublist p {
+	opacity: 0.7;
+	cursor: pointer;
+
+	transition: opacity 0.2s;
+}
+
+.sublist-title:hover,
+.footer-sublist p:hover {
+	opacity: 1;
+}
+
+@media (min-width: 990px) {
+	footer {
+		gap: 3rem;
+		grid-template-columns: repeat(4, 1fr);
+    /* justify-items: center; */
+	}
+}
