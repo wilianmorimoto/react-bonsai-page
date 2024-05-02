@@ -15,11 +15,11 @@ const Plans = () => {
 			<div className="header-plans">
 				<h1>Plans & Pricing</h1>
 				<div className="toggle-plans">
-					<span>MONTHLY</span>
+					<span className={!yearly ? "selected" : ''}>MONTHLY</span>
 					<div onClick={toggleYearly} className="toggle-button">
 						<div className={`circle ${yearly ? "year" : ""}`}></div>
 					</div>
-					<span>YEARLY</span>
+					<span className={yearly ? "selected" : ''}>YEARLY</span>
 				</div>
 			</div>
 			<div className="plans">

@@ -26,8 +26,15 @@
 }
 
 .toggle-plans span {
+  color: var(--color-light-gray);
   letter-spacing: .1rem;
   font-weight: 600;
+
+  transition: color .3s;
+}
+
+.toggle-plans span.selected {
+  color: var(--color-gray);
 }
 
 .toggle-button {

@@ -3,6 +3,7 @@ import "./Main.css";
 import Plans from "./Plans/Plans";
 import Addons from "./Addons/Addons";
 import StartFree from "./StartFree/StartFree";
+import Questions from "./Questions/Questions";
 
 const Main = () => {
 	return (
@@ -10,6 +11,7 @@ const Main = () => {
 			<Plans />
 			<Addons />
       <StartFree />
+			<Questions />
 		</main>
 	);
 };

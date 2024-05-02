@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import { IoClose } from "react-icons/io5";
 import { TbFileInvoice } from "react-icons/tb";
@@ -8,15 +8,17 @@ import { IoIosArrowDown } from "react-icons/io";
 const Navbar = () => {
 
   function openMenu(e) {
-    const menu = e.target.querySelector(".nav-sublist");
-    const listIcon = e.target.querySelector("p > svg");
-    if (menu.style.display === "none") {
-      listIcon.style.transform = "rotate(180deg)";
-      menu.style.display = "block";
-    } else {
-      listIcon.style.transform = "rotate(360deg)";
-      menu.style.display = "none";
-    }
+		const li = e.target
+		const ul = li.querySelector('.nav-sublist')
+		const listIcon = li.querySelector('p > svg')
+
+		if (ul.style.display === "none") {
+			listIcon.style.transform = "rotate(180deg)";
+      ul.style.display = "block";
+		} else {
+			listIcon.style.transform = "rotate(360deg)";
+      ul.style.display = "none";
+		}
   }
 
   function closeMenu() {
@@ -33,7 +35,7 @@ const Navbar = () => {
 				<IoClose id="close-menu-icon" onClick={closeMenu} />
 			</div>
 			<ul className="nav-list">
-				<li onClick={e => openMenu(e)}>
+				<li onClick={(e) => openMenu(e)}>
 					<p>Product <IoIosArrowDown className="list-arrow-icon" /></p>
 					<ul className="nav-sublist">
 						<li>
@@ -50,7 +52,7 @@ const Navbar = () => {
 						</li>
 					</ul>
 				</li>
-				<li onClick={e => openMenu(e)}>
+				<li onClick={(e) => openMenu(e)}>
 					<p>Templates <IoIosArrowDown className="list-arrow-icon" /></p>
 					<ul className="nav-sublist">
 						<li>
